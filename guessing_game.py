@@ -34,6 +34,13 @@ def start_game():
         if guess == answer:
             print("Thats the number you won! It took you {} attempts".format(count))
             print("THE GAME IS OVER!")
+            replay = input(" Would you like to play again Y/N?  ")
+
+            if replay.lower() == "y":
+                answer = random.randrange(11)
+                count = 1
+                continue
+
             break
 
     """Psuedo-code Hints
