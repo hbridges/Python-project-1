@@ -16,6 +16,7 @@ def start_game():
     print("Welcome to the guessing game good luck!")
     answer = random.randrange(11)
     count = 1
+    highscore = 100
 
     while True:
         try:
@@ -37,15 +38,14 @@ def start_game():
             replay = input(" Would you like to play again Y/N?  ")
 
             if replay.lower() == "y":
+                if count <= highscore:
+                    highscore = count
+                print("The HIGHSCORE IS {}!".format(highscore))
                 answer = random.randrange(11)
                 count = 1
                 continue
 
             break
-
-    """Psuedo-code Hints
-    ( You can add more features/enhancements if you'd like to. )
-    """
 
 
 if __name__ == '__main__':
