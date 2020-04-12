@@ -18,17 +18,20 @@ def start_game():
     count = 1
 
     while True:
-        guess = input("Pick a number between 1 and 10  ")
-
-        if int(guess) > answer:
+        try:
+            guess = int(input("Pick a number between 1 and 10  "))
+        except ValueError:
+            print("Oops looks like you didn't enter a number")
+            continue
+        if guess > answer:
             print("It's lower. ")
             count += 1
             continue
-        if int(guess) < answer:
+        if guess < answer:
             print("It's higher.")
             count += 1
             continue
-        if int(guess) == answer:
+        if guess == answer:
             print("Thats the number you won! It took you {} attempts".format(count))
             print("THE GAME IS OVER!")
             break
