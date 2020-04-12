@@ -24,6 +24,10 @@ def start_game():
         except ValueError:
             print("Oops looks like you didn't enter a number")
             continue
+        if guess < 1 or guess > 10:
+            print("Please guess between 1 and 10 only")
+            count += 1
+            continue
         if guess > answer:
             print("It's lower. ")
             count += 1
